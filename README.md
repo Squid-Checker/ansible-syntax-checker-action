@@ -1,0 +1,1 @@
+# ansible-syntax-checker-action
