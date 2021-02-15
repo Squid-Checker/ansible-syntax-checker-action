@@ -22,8 +22,8 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Syntax Ansible Playbook
-      # replace "master" with any valid ref
-      uses: ansible/ansible-syntax-checker-action@master
+      # replace "main" with any valid ref
+      uses: ansible/ansible-syntax-checker-action@main
       with:
         # [required]
         # Paths to ansible files (i.e., playbooks, tasks, handlers etc..)
