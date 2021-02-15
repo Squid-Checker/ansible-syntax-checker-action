@@ -23,7 +23,7 @@ jobs:
 
     - name: Syntax Ansible Playbook
       # replace "master" with any valid ref
-      uses: ansible/ansible-syntax-checker-action@master
+      uses: ansible/ansible-syntax-checker-action@main
       with:
         # [required]
         # Paths to ansible files (i.e., playbooks, tasks, handlers etc..)
