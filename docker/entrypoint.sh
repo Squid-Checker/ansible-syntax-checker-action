@@ -92,7 +92,7 @@ ansible::lint() {
 
   # Enable recursive glob patterns, such as '**/*.yml'.
   shopt -s globstar
-  ansible-playbook --syntax-check -v --force-color $opts ${TARGETS}
+  ansible-playbook --syntax-check -v $opts ${TARGETS}
   shopt -u globstar
 }
 
