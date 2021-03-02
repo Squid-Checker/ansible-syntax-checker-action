@@ -13,7 +13,7 @@ LABEL "com.github.actions.color"="gray-dark"
 RUN set -ex && apt-get update && apt-get -q install -y -V git && rm -rf /var/lib/apt/lists/*
 
 RUN pip install ansible
-
+RUN chmod +x entrypoint.sh
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
