@@ -80,8 +80,8 @@ override_python_packages() {
 # args:
 #   $@: additional options
 # env:
-#   [required] TARGETS : Files or directories (i.e., playbooks, tasks, handlers etc..) to be syntax checked
-ansible::ansible-playbook --syntax-check() {
+#   [required] TARGETS : Files or directories (i.e., playbooks, tasks, handlers etc..) to be linted
+ansible::lint() {
   : "${TARGETS?No targets to check. Nothing to do.}"
   : "${GITHUB_WORKSPACE?GITHUB_WORKSPACE has to be set. Did you use the actions/checkout action?}"
   pushd "${GITHUB_WORKSPACE}"
@@ -92,7 +92,7 @@ ansible::ansible-playbook --syntax-check() {
 
   # Enable recursive glob patterns, such as '**/*.yml'.
   shopt -s globstar
-  ansible-playbook  --syntax-check -v --force-color $opts ${TARGETS}
+  ansible-playbook --syntax-check -v --force-color $opts ${TARGETS}
   shopt -u globstar
 }
 
@@ -100,6 +100,6 @@ ansible::ansible-playbook --syntax-check() {
 args=("$@")
 
 if [ "$0" = "${BASH_SOURCE[*]}" ] ; then
-  >&2 echo -E "\nRunning Ansible Syntax Check...\n"
+  >&2 echo -E "\nRunning Ansible Syntax...\n"
   ansible::lint "${args[@]}"
 fi
