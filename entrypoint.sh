@@ -101,5 +101,5 @@ args=("$@")
 
 if [ "$0" = "${BASH_SOURCE[*]}" ] ; then
   >&2 echo -E "\nRunning Ansible Syntax Check...\n"
-  ansible::playbook  --syntax-check "${args[@]}"
+  ansible::lint "${args[@]}"
 fi
