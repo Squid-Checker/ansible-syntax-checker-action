@@ -14,11 +14,11 @@ RUN set -ex && apt-get update && apt-get -q install -y -V git && rm -rf /var/lib
 
 RUN pip install ansible
 
-RUN chmod +x entrypoint.sh
-
 RUN ls
 
 RUN pwd
+
+RUN chmod +x entrypoint.sh
 
 COPY entrypoint.sh /entrypoint.sh
 
