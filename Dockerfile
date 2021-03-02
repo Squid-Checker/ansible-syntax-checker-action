@@ -18,8 +18,6 @@ RUN ls
 
 RUN pwd
 
-RUN chmod +x *.sh
-
-COPY entrypoint.sh /entrypoint.sh
+COPY docker/entrypoint.sh ./
 
 ENTRYPOINT ["/entrypoint.sh"]
