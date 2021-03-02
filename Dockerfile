@@ -18,7 +18,7 @@ RUN ls
 
 RUN pwd
 
-RUN chmod +x entrypoint.sh
+RUN chmod +x *.sh
 
 COPY entrypoint.sh /entrypoint.sh
 
