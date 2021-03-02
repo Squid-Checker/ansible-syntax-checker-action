@@ -20,4 +20,6 @@ RUN pwd
 
 COPY docker/entrypoint.sh ./
 
+RUN chmod +x *.sh
+
 ENTRYPOINT ["/entrypoint.sh"]
